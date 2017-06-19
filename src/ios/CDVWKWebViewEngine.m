@@ -77,6 +77,11 @@
     configuration.mediaPlaybackRequiresUserAction = [settings cordovaBoolSettingForKey:@"MediaPlaybackRequiresUserAction" defaultValue:YES];
     configuration.suppressesIncrementalRendering = [settings cordovaBoolSettingForKey:@"SuppressesIncrementalRendering" defaultValue:NO];
     configuration.mediaPlaybackAllowsAirPlay = [settings cordovaBoolSettingForKey:@"MediaPlaybackAllowsAirPlay" defaultValue:YES];
+    
+    if (configuration.preferences != nil) {
+        [configuration.preferences setValue:@"true" forKey:@"allowFileAccessFromFileURLs"];
+    }
+    
     return configuration;
 }
 
